@@ -1,0 +1,4 @@
+<p>directives works!</p>
+<h1 [ngClass]="{ admin: isAdmin }">{{ directives.title }}</h1>
+<button (click)="handleClick()">view</button>
+<button *ngIf="isAdmin">edit</button>
