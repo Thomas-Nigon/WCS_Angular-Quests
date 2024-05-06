@@ -1,0 +1,13 @@
+<p>user-profile works!</p>
+<p>Hello {{ user.firstName }}</p>
+<p>
+  My quote is: <br />
+  {{ user.quote }}
+</p>
+<button (click)="handleClick()">Hide age</button>
+@if(showAge){
+
+<p>My age is {{ user.age }}</p>
+}
+<img [src]="user.photo" alt="I profile picture" />
+<input type="text" [(ngModel)]="user.quote" />
