@@ -1,0 +1,14 @@
+<form #onomatoepiaForm="ngForm" (ngSubmit)="createOnomatoepia()">
+  <fieldset>
+    <label for="onomatoepia">Onomatoepia</label>
+    <input
+      id="onomatoepia"
+      name="onomatoepia"
+      [(ngModel)]="newOnomatoepia"
+      #onomatoepia="ngModel"
+      type="text"
+      required
+    />
+  </fieldset>
+  <button>send</button>
+</form>

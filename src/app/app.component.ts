@@ -3,11 +3,11 @@ import { RouterOutlet, RouterModule, RouterLink } from '@angular/router';
 import { BlockComponent } from './block/block.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { DirectivesComponent } from './directives/directives.component';
-import { CommonModule } from '@angular/common';
 import { MyFormComponent } from './my-form/my-form.component';
 import { MenuComponent } from './menu/menu.component';
 import { DeveloperComponent } from './developer/developer.component';
 import { SkillComponent } from './skill/skill.component';
+import { OnomatoepiaComponent } from './onomatoepia/onomatoepia.component';
 
 @Component({
   selector: 'app-root',
@@ -22,10 +22,11 @@ import { SkillComponent } from './skill/skill.component';
     MyFormComponent,
     DeveloperComponent,
     SkillComponent,
+    OnomatoepiaComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
 export class AppComponent {
-  title = 'Angular_Quest_04';
+  title = 'Angular_Quest_08';
 }
