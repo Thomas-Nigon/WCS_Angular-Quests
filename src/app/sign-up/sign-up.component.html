@@ -1,1 +1,79 @@
 <p>sign-up works!</p>
+<form #myForm="ngForm" (ngSubmit)="onSubmit()">
+  <fieldset>
+    <label for="firstName-signIn">FirstName:</label>
+    <input
+      id="firstName-signIn"
+      name="firstName-signIn"
+      type="text"
+      [(ngModel)]="newSignIn.firstName"
+      #firstName="ngModel"
+      required
+      minlength="5"
+      maxlength="30"
+    />
+  </fieldset>
+
+  <div *ngIf="firstName.errors">
+    <span *ngIf="firstName.errors?.['required'] && myForm.submitted"
+      >Firstname required</span
+    >
+    <span *ngIf="firstName.errors?.['minlength']&& myForm.submitted"
+      >Firstname must be at least 5 characters</span
+    >
+    <span *ngIf="firstName.errors?.['maxlength']&& myForm.submitted"
+      >Firstname should not exceed 30 characters</span
+    >
+  </div>
+
+  <fieldset>
+    <label for="firstName-signIn">Lastname:</label>
+    <input
+      id="lastName-signIn"
+      name="lastName-signIn"
+      type="text"
+      [(ngModel)]="newSignIn.lastName"
+      #lastName="ngModel"
+      required
+      minlength="5"
+      maxlength="30"
+    />
+  </fieldset>
+
+  <div *ngIf="lastName.errors">
+    <span *ngIf="lastName.errors?.['required'] && myForm.submitted"
+      >lastname required</span
+    >
+    <span *ngIf="lastName.errors?.['minlength']&& myForm.submitted"
+      >Lastname must be at least 5 characters</span
+    >
+    <span *ngIf="firstName.errors?.['maxlength']&& myForm.submitted"
+      >Lastname must not exceed 30 characters</span
+    >
+  </div>
+
+  <fieldset>
+    <label for="email-sign">Email:</label>
+    <input
+      id="email-sign"
+      name="email-sign"
+      type="email"
+      [(ngModel)]="newSignIn.email"
+      #email="ngModel"
+      required
+      email
+    />
+  </fieldset>
+
+  <div *ngIf="email.errors">
+    <span *ngIf="email.errors?.['required']&& myForm.submitted"
+      >Email is required</span
+    >
+    <span *ngIf="email.errors?.['email']&& myForm.submitted"
+      >please enter a valid email address</span
+    >
+  </div>
+
+  <button type="reset">Restore</button>
+  <button type="submit">Submit</button>
+</form>
