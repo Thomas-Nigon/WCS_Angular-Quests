@@ -6,6 +6,8 @@ import { DirectivesComponent } from './directives/directives.component';
 import { CommonModule } from '@angular/common';
 import { MyFormComponent } from './my-form/my-form.component';
 import { MenuComponent } from './menu/menu.component';
+import { DeveloperComponent } from './developer/developer.component';
+import { SkillComponent } from './skill/skill.component';
 
 @Component({
   selector: 'app-root',
@@ -18,6 +20,8 @@ import { MenuComponent } from './menu/menu.component';
     DirectivesComponent,
     MenuComponent,
     MyFormComponent,
+    DeveloperComponent,
+    SkillComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
