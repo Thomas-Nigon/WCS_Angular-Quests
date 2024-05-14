@@ -13,8 +13,10 @@ import { CommonModule } from '@angular/common';
 export class CocktailListComponent {
   cocktailList: Cocktail[] = [];
   private cocktailService = inject(CocktailService);
+
   ngOnInit(): void {
-    this.cocktailList = this.cocktailService.getCocktails();
-    console.log('cocktailList:', this.cocktailList);
+    this.cocktailService.getCocktails().subscribe((cocktailsFromJsonFile) => {
+      this.cocktailList = cocktailsFromJsonFile;
+    });
   }
 }
