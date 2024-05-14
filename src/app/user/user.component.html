@@ -1,42 +1,53 @@
 <div>
-  <fieldset>
-    <h1>User:</h1>
-    <label>
-      Username:
-      <input type="text" [formControl]="userName" />
-    </label>
+  <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+    <div>
+      <h1>User:</h1>
+      <label>
+        Username:
+        <input type="text" formControlName="userName" required />
+      </label>
+      <span *ngIf="userForm.get('userName')?.invalid">
+        Please enter a Username
+      </span>
+    </div>
+    <div formGroupName="credentials">
+      <label>
+        Email:
+        <input type="email" formControlName="email" required email />
+      </label>
+      <span *ngIf="userForm.get('credentials.email')?.invalid">
+        Please enter a VALID EMAIL
+      </span>
+      <label>
+        Password:
+        <input type="text" formControlName="password" required />
+      </label>
+      <span *ngIf="userForm.get('credentials.password')?.invalid">
+        Please enter a password
+      </span>
+      <button type="submit" [disabled]="!userForm.valid">Submit</button>
+    </div>
 
-    <label>
-      Email:
-      <input type="text" [formControl]="email" />
-    </label>
-    <label>
-      Password:
-      <input type="text" [formControl]="password" />
-    </label>
-  </fieldset>
+    <!--  <div formGroupName="address">
+      <h2>Adress:</h2>
+      <label>
+        Street:
+        <input type="text" formControlName="street" />
+      </label>
 
-  <fieldset>
-    <h2>Adress:</h2>
-    <label>
-      Street:
-      <input type="text" [formControl]="street" />
-    </label>
-
-    <label>
-      Street number:
-      <input type="text" [formControl]="number" />
-    </label>
-    <label>
-      ZipCode:
-      <input type="text" [formControl]="zipcode" />
-    </label>
-    <label>
-      City:
-      <input type="text" [formControl]="city" />
-    </label>
-  </fieldset>
-  <button (click)="onSubmit()">Submit</button>
+      <label>
+        Street number: <input type="text" formControlName="number" />
+      </label>
+      <label>
+        ZipCode:
+        <input type="text" formControlName="zipCode" />
+      </label>
+      <label>
+        City:
+        <input type="text" formControlName="city" />
+      </label>
+    </div> -->
+  </form>
 </div>
 
 <div *ngIf="newUser">

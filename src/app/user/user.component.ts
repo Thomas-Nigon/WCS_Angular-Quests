@@ -1,5 +1,10 @@
 import { Component } from '@angular/core';
-import { FormControl, ReactiveFormsModule } from '@angular/forms';
+import {
+  FormBuilder,
+  FormControl,
+  FormGroup,
+  ReactiveFormsModule,
+} from '@angular/forms';
 import { User } from '../models/myUser.model';
 import { CommonModule } from '@angular/common';
 
@@ -12,23 +17,23 @@ import { CommonModule } from '@angular/common';
 })
 export class UserComponent {
   public newUser: User | undefined;
-  userName = new FormControl('');
-  email = new FormControl('');
-  password = new FormControl('');
-  street = new FormControl('');
-  number = new FormControl('');
-  zipcode = new FormControl('');
-  city = new FormControl('');
+
+  public userForm = this.fb.group({
+    userName: [''],
+    credentials: this.fb.group({
+      email: [''],
+      password: [''],
+    }),
+    /*     address: this.fb.group({
+      street: [''],
+      number: [''],
+      zipCode: [''],
+      city: [''],
+    }), */
+  });
+  constructor(private fb: FormBuilder) {}
 
   onSubmit(): void {
-    this.newUser = new User(
-      this.userName.value,
-      this.email.value,
-      this.password.value,
-      this.street.value,
-      this.number.value,
-      this.zipcode.value,
-      this.city.value
-    );
+    console.log(this.userForm.value.credentials);
   }
 }
