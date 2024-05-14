@@ -7,8 +7,9 @@ import { MyFormComponent } from './my-form/my-form.component';
 import { DeveloperComponent } from './developer/developer.component';
 import { SkillComponent } from './skill/skill.component';
 import { OnomatoepiaComponent } from './onomatoepia/onomatoepia.component';
-import { HelloWorldService } from './hello-world.service';
+import { HelloWorldService } from './Services/hello-world.service';
 import { CocktailListComponent } from './cocktail-list/cocktail-list.component';
+import { UserComponent } from './user/user.component';
 
 @Component({
   selector: 'app-root',
@@ -24,12 +25,13 @@ import { CocktailListComponent } from './cocktail-list/cocktail-list.component';
     SkillComponent,
     OnomatoepiaComponent,
     CocktailListComponent,
+    UserComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
 export class AppComponent {
-  title = 'Angular_Quest_01';
+  title = 'Angular_Quest_14';
   private helloWorldService = inject(HelloWorldService);
   onClick() {
     console.log(this.helloWorldService.getHelloWorld());

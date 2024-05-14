@@ -1,6 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { Cocktail } from '../models/cocktail.model';
-import { CocktailService } from '../cocktail.service';
+import { CocktailService } from '../Services/cocktail.service';
 import { CommonModule } from '@angular/common';
 
 @Component({

@@ -1,0 +1,53 @@
+<div>
+  <fieldset>
+    <h1>User:</h1>
+    <label>
+      Username:
+      <input type="text" [formControl]="userName" />
+    </label>
+
+    <label>
+      Email:
+      <input type="text" [formControl]="email" />
+    </label>
+    <label>
+      Password:
+      <input type="text" [formControl]="password" />
+    </label>
+  </fieldset>
+
+  <fieldset>
+    <h2>Adress:</h2>
+    <label>
+      Street:
+      <input type="text" [formControl]="street" />
+    </label>
+
+    <label>
+      Street number:
+      <input type="text" [formControl]="number" />
+    </label>
+    <label>
+      ZipCode:
+      <input type="text" [formControl]="zipcode" />
+    </label>
+    <label>
+      City:
+      <input type="text" [formControl]="city" />
+    </label>
+  </fieldset>
+  <button (click)="onSubmit()">Submit</button>
+</div>
+
+<div *ngIf="newUser">
+  <p>Test</p>
+  <p>
+    {{ newUser.userName }} just signed in. His credentials are: email:{{
+      newUser.email
+    }}
+    password:{{ newUser.password }}.
+  </p>
+  <p>His address is:</p>
+  <p>{{ newUser.number }}, {{ newUser.street }}</p>
+  <p>{{ newUser.zipcode }}, {{ newUser.city }}</p>
+</div>
