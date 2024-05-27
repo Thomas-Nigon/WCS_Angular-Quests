@@ -1,0 +1,26 @@
+<h1>movie search form</h1>
+<form class="movieForm" [formGroup]="searchMovieForm" (ngSubmit)="submit()">
+  <label for="id">id</label>
+  <input type="text" formControlName="id" />
+  <label for="title">Title</label>
+  <input type="text" formControlName="title" />
+  <span *ngIf="searchMovieForm.errors">either title or Id required <br /></span>
+
+  <div formGroupName="info">
+    <select name="Type" id="type" formControlName="type">
+      <option value="Movie">Movie</option>
+      <option value="TV show">TV Show</option>
+      <option value="Episode">Episode</option>
+    </select>
+    <label for="releaseYear">Released in:</label>
+    <input type="text" formControlName="releaseYear" />
+    <span *ngIf="searchMovieForm.controls.info.controls.releaseYear.errors"
+      >Invalid date it must be between 1900 and today</span
+    >
+    <select name="decription" id="description" formControlName="description">
+      <option value="long">long</option>
+      <option value="short">short</option>
+    </select>
+  </div>
+  <button type="submit">submit</button>
+</form>

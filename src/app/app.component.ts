@@ -6,6 +6,7 @@ import { DirectivesComponent } from './directives/directives.component';
 import { CommonModule } from '@angular/common';
 import { MyFormComponent } from './my-form/my-form.component';
 import { MenuComponent } from './menu/menu.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -18,10 +19,11 @@ import { MenuComponent } from './menu/menu.component';
     DirectivesComponent,
     MenuComponent,
     MyFormComponent,
+    ReactiveFormsModule,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
 export class AppComponent {
-  title = 'Angular_Quest_04';
+  title = 'Angular_Quest_05';
 }
